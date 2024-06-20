@@ -20,7 +20,7 @@ html {
 .heading {
     height: 3rem; /* Sets the height */
     background: #f2f2f233; /* Sets the background color with some transparency */
-    width: 100vw; /* Sets the width to the full viewport width */
+    width: 250vw; /* Sets the width to the full viewport width */
     left: 0; /* Positions the element to the left edge */
     position: fixed; /* Fixes the element in place */
     top: 0; /* Positions the element to the top edge */
