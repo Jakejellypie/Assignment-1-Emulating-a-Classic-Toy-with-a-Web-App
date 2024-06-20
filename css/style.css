@@ -1,0 +1,163 @@
+html {
+    font-family: monospace; /* Sets the font family for the entire document */
+    background-color: rgb(84, 84, 84); /* Sets the background color */
+    font-size: 17px; /* Sets the base font size */
+}
+
+.grid-container {
+    display: grid; /* Defines the container as a grid */
+    grid-template-areas: 
+        "buttons1 buttons1 buttons1"
+        "groups groups groups"
+        "buttons2 buttons2 buttons2"; /* Specifies the layout of the grid areas */
+    width: fit-content; /* Sets the width to fit the content */
+    height: fit-content; /* Sets the height to fit the content */
+    margin: 5rem auto; /* Centers the container with margin */
+    border-radius: 3rem; /* Rounds the corners */
+    border: 3px solid black; /* Sets the border properties */
+}
+
+.heading {
+    height: 3rem; /* Sets the height */
+    background: #f2f2f233; /* Sets the background color with some transparency */
+    width: 100vw; /* Sets the width to the full viewport width */
+    left: 0; /* Positions the element to the left edge */
+    position: fixed; /* Fixes the element in place */
+    top: 0; /* Positions the element to the top edge */
+    backdrop-filter: blur(15px); /* Adds a blur effect */
+    box-shadow: #0000009c 0px 4px 8px; /* Adds a shadow effect */
+    z-index: 1; /* Sets the stacking order */
+}
+
+.firstButtonSet {
+    background: #837474; /* Sets the background color */
+    width: 38rem; /* Sets the width */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-evenly; /* Distributes space evenly */
+    padding: 1rem; /* Adds padding */
+    border-radius: 3rem 3rem 0 0; /* Rounds the top corners */
+    grid-area: buttons1; /* Places the element in the grid area 'buttons1' */
+    border-bottom: 3px solid black; /* Adds a bottom border */
+}
+
+.button_1, .button_2, .button_3, .button_4, .button_5 {
+    width: 4rem; /* Sets the width */
+    height: 2rem; /* Sets the height */
+    border-radius: 4rem; /* Rounds the corners */
+    border: #0000006e 2px solid; /* Sets the border properties */
+    color: #393636; /* Sets the text color */
+}
+
+.button_1 { background-color: #f6bbc68c; transform: translateX(-33px); }
+.button_2 { background-color: #a5eaff8c; transform: translateX(-15px); }
+.button_3 { background-color: #fdfbdb8c; }
+.button_4 { background-color: #dbf9e98c; transform: translateX(19px); }
+.button_5 { background-color: #c0c1fb8c; transform: translateX(35px); }
+
+.button_1:hover, .button_2:hover, .button_3:hover, .button_4:hover, .button_5:hover,
+.individualButton:hover, .playbackButton:hover {
+    background-color: rgba(0, 0, 0, 0.251); /* Changes the background color on hover */
+    cursor: pointer; /* Changes the cursor to a pointer */
+}
+
+.optionsGroupOne, .optionsGroupTwo, .optionsGroupThree, .optionsGroupFour, .optionsGroupFive {
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Arranges items in a column */
+    justify-content: space-evenly; /* Distributes space evenly */
+    height: 54rem; /* Sets the height */
+    width: 8rem; /* Sets the width */
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.16) 0%, rgba(9, 9, 121, 0.2) 35%, rgb(104, 83, 83) 100%); /* Sets a gradient background */
+}
+
+.row1col1, .row2col1, .row3col1, .row4col1, .row5col1,
+.row1col2, .row2col2, .row3col2, .row4col2, .row5col2,
+.row1col3, .row2col3, .row3col3, .row4col3, .row5col3,
+.row1col4, .row2col4, .row3col4, .row4col4, .row5col4,
+.row1col5, .row2col5, .row3col5, .row4col5, .row5col5 {
+    width: fit-content; /* Sets the width to fit the content */
+    height: 8rem; /* Sets the height */
+    padding: 3px; /* Adds padding */
+    border: 2px inset white; /* Adds an inset border */
+    margin: 18px auto 0 auto; /* Centers the element and adds margin */
+    border-radius: 2rem; /* Rounds the corners */
+    background-color: #4c4343; /* Sets the background color */
+}
+
+.turkeyGif, .ufoGif, .jesterGif, .dogGif, .ghostGif,
+.hugGif, .sittingPic, .dancingGif, .eatingGif, .kissingGif,
+.slimyPic, .disgustPic, .fatPic, .italianPic, .angryPic,
+.frogGif, .shoePic, .jellyFishGif, .monkeyGif, .butterFlyGif,
+.grassPic, .soupPic, .galaxyPic, .whiteHousePic, .prisonPic {
+    width: 5rem; /* Sets the width */
+}
+
+.sittingPic, .slimyPic, .disgustPic, .fatPic, .italianPic, .angryPic,
+.shoePic, .grassPic, .soupPic, .galaxyPic, .whiteHousePic, .prisonPic {
+    animation-name: sway; /* Assigns the sway animation */
+    animation-timing-function: ease-out; /* Sets the timing function */
+    animation-duration: 1.5s; /* Sets the duration */
+    animation-iteration-count: infinite; /* Repeats the animation infinitely */
+}
+
+@keyframes sway {
+    0% { transform: rotate(0deg); }
+    40% { transform: rotate(7deg); }
+    60% { transform: rotate(0deg); }
+    80% { transform: rotate(-7deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.allGroups {
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-evenly; /* Distributes space evenly */
+    height: fit-content; /* Sets the height to fit the content */
+    width: 40rem; /* Sets the width */
+    background-color: #ffe1e145; /* Sets the background color */
+    grid-area: groups; /* Places the element in the grid area 'groups' */
+}
+
+.subText, .subText-2 {
+    font-size: 12px; /* Sets the font size */
+    text-align: center; /* Centers the text */
+    color: white; /* Sets the text color */
+    width: fit-content; /* Sets the width to fit the content */
+    margin: 5px auto 10px auto; /* Centers the element and adds margin */
+}
+
+.subText-2 {
+    transform: translateY(-10px); /* Moves the element upwards */
+    margin-bottom: 0; /* Removes the bottom margin */
+}
+
+.secondButtonSet {
+    background-color: #837474; /* Sets the background color */
+    height: 4rem; /* Sets the height */
+    grid-area: buttons2; /* Places the element in the grid area 'buttons2' */
+    border-radius: 0 0 3rem 3rem; /* Rounds the bottom corners */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-evenly; /* Distributes space evenly */
+    flex-direction: row; /* Arranges items in a row */
+    border-top: 3px solid black; /* Adds a top border */
+}
+
+.secondButtonSet > button {
+    width: fit-content; /* Sets the width to fit the content */
+    height: fit-content; /* Sets the height to fit the content */
+    padding: 3px 13px; /* Adds padding */
+    border-radius: 4rem; /* Rounds the corners */
+    border: #0000006e 2px solid; /* Sets the border properties */
+    margin: auto 0; /* Centers the buttons vertically */
+    color: #393636; /* Sets the text color */
+    font-size: 15px; /* Sets the font size */
+}
+
+.footer {
+    position: fixed; /* Fixes the element in place */
+    left: 0; /* Positions the element to the left edge */
+    bottom: 0; /* Positions the element to the bottom edge */
+    width: 100%; /* Sets the width to 100% */
+    background-color: #868686fc; /* Sets the background color */
+    color: white; /* Sets the text color */
+    text-align: center; /* Centers the text */
+    height: 2rem; /* Sets the height */
+    box-shadow: #6225009

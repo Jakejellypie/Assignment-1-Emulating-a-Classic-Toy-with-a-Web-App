@@ -1,0 +1,167 @@
+// Assignment 1 | COMP1073 Client-Side JavaScript
+
+/* Variables
+-------------------------------------------------- */
+//My initialButtons Increment Buttons.
+const incrementButtonOne = document.querySelector(".button_1");
+const incrementButtonTwo = document.querySelector(".button_2");
+const incrementButtonThree = document.querySelector(".button_3");
+const incrementButtonFour = document.querySelector(".button_4");
+const incrementButtonFive = document.querySelector(".button_5");
+
+//The first row images Variables.
+const rowOneImg1 = document.querySelector(".row1col1");
+const rowOneImg2 = document.querySelector(".row2col1");
+const rowOneImg3 = document.querySelector(".row3col1");
+const rowOneImg4 = document.querySelector(".row4col1");
+const rowOneImg5 = document.querySelector(".row5col1");
+
+//The Second row images Variables.
+const rowTwoImg1 = document.querySelector(".row1col2");
+const rowTwoImg2 = document.querySelector(".row2col2");
+const rowTwoImg3 = document.querySelector(".row3col2");
+const rowTwoImg4 = document.querySelector(".row4col2");
+const rowTwoImg5 = document.querySelector(".row5col2");
+
+//The Third row images Variables.
+const rowThreeImg1 = document.querySelector(".row1col3");
+const rowThreeImg2 = document.querySelector(".row2col3");
+const rowThreeImg3 = document.querySelector(".row3col3");
+const rowThreeImg4 = document.querySelector(".row4col3");
+const rowThreeImg5 = document.querySelector(".row5col3");
+
+//The Fourth row images Variables.
+const rowFourImg1 = document.querySelector(".row1col4");
+const rowFourImg2 = document.querySelector(".row2col4");
+const rowFourImg3 = document.querySelector(".row3col4");
+const rowFourImg4 = document.querySelector(".row4col4");
+const rowFourImg5 = document.querySelector(".row5col4");
+
+//The Fifth row images Variables.
+const rowFifthImg1 = document.querySelector(".row1col5");
+const rowFifthImg2 = document.querySelector(".row2col5");
+const rowFifthImg3 = document.querySelector(".row3col5");
+const rowFifthImg4 = document.querySelector(".row4col5");
+const rowFifthImg5 = document.querySelector(".row5col5");
+
+//All the arrays containing different images on each column of each row.
+const rowOneArray = [rowOneImg1, rowOneImg2, rowOneImg3, rowOneImg4, rowOneImg5];
+const rowTwoArray = [rowTwoImg1, rowTwoImg2, rowTwoImg3, rowTwoImg4, rowTwoImg5];
+const rowThreeArray = [rowThreeImg1, rowThreeImg2, rowThreeImg3, rowThreeImg4, rowThreeImg5];
+const rowFourArray = [rowFourImg1, rowFourImg2, rowFourImg3, rowFourImg4, rowFourImg5];
+const rowFifthArray = [rowFifthImg1, rowFifthImg2, rowFifthImg3, rowFifthImg4, rowFifthImg5];
+
+//My sentence playback button
+const sentenceButton  = document.querySelector(".sentenceButton");
+
+//My Word playback button
+const wordButton  = document.querySelector(".wordButton");
+
+
+let buttonOnePressed = false;
+let buttonTwoPressed = false;
+let buttonThreePressed = false;
+let buttonFourPressed = false;
+let buttonFivePressed = false;
+
+
+// Create a new speechSynthesis object
+const synth = window.speechSynthesis;
+// Learn more about SpeechSynthesis.speak() at https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speak
+// const speakButton = document.querySelector('button');
+// let textToSpeak = 'This is the text string that you will generate with your script';
+
+
+/* Functions
+-------------------------------------------------- */
+
+
+
+function incrementOne(array, button){	
+	array[4].style.backgroundColor = "#4c4343";
+	array[0].style.backgroundColor = "grey";
+	buttonFivePressed = false;
+	buttonOnePressed = true;
+	if(buttonOnePressed){wordGenerator(array, 0);}
+	button.addEventListener("click", function(){incrementTwo(array, button);});
+}
+
+function incrementTwo(array, button){
+	array[0].style.backgroundColor = "#4c4343";
+	array[1].style.backgroundColor = "grey";
+	buttonOnePressed = false;
+	buttonTwoPressed = true;
+	if(buttonTwoPressed){wordGenerator(array, 1);}
+	button.addEventListener("click", function(){incrementThree(array, button);});
+}
+
+function incrementThree(array, button){
+	array[1].style.backgroundColor = "#4c4343";
+	array[2].style.backgroundColor = "grey";
+	buttonTwoPressed = false;
+	buttonThreePressed = true;
+	incrementButtonOne.removeEventListener("click", incrementOne);
+	incrementButtonOne.removeEventListener("click", incrementTwo);
+
+	if(buttonThreePressed){wordGenerator(array, 2);}
+	button.addEventListener("click", function(){incrementFour(array, button);});
+}
+
+function incrementFour(array, button){
+	array[2].style.backgroundColor = "#4c4343";
+	array[3].style.backgroundColor = "grey";
+	buttonThreePressed = false;
+	buttonFourPressed = true;
+	if(buttonFourPressed){wordGenerator(array, 3);}
+	button.addEventListener("click", function(){incrementFive(array, button);});
+}
+
+function incrementFive(array, button){
+	array[3].style.backgroundColor = "#4c4343";
+	array[4].style.backgroundColor = "grey";
+	buttonfourPressed = false;
+	buttonFivePressed = true;
+	if(buttonFivePressed){wordGenerator(array, 4);}
+	button.addEventListener("click", function(){incrementOne(array, button);});
+}
+
+// Function to remove previous event listeners
+function removePreviousListeners(button) {
+    const newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+}
+
+
+function wordGenerator(array, index) {
+    const className = array[index].className;
+	word = document.querySelector(`.${className} .subText`)
+    console.log(word.innerHTML);
+
+	buttonOnePressed = false;
+	buttonTwoPressed = false;
+	ttonThreePressed = false;
+	buttonFourPressed = false;
+	buttonFivePressed = false;
+
+}
+
+// function speakNow(string) {
+// 	Create a new speech object, attaching the string of text to speak
+// 	const utterThis = new SpeechSynthesisUtterance(string);
+// 	Actually speak the text
+// 	synth.speak(utterThis);
+// }
+
+/* Event Listeners
+-------------------------------------------------- */
+// The click event handler for the button that speaks the text contained in the above var textToSpeak
+// speakButton.addEventListener('click', function () {
+// 	speakNow(textToSpeak);
+// });
+
+
+incrementButtonOne.addEventListener("click", function(){incrementOne(rowOneArray, incrementButtonOne)});
+incrementButtonTwo.addEventListener("click", function(){incrementOne(rowTwoArray, incrementButtonTwo)});
+incrementButtonThree.addEventListener("click", function(){incrementOne(rowThreeArray, incrementButtonThree)});
+incrementButtonFour.addEventListener("click",  function(){incrementOne(rowFourArray, incrementButtonFour)});
+incrementButtonFive.addEventListener("click", function(){incrementOne(rowFifthArray, incrementButtonFive)});
